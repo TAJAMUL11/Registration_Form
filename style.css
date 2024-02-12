@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins";
+    font-weight: 300;
+}
+
+section{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(./Images/abstract1.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    animation: animateBg 5s linear infinite;
+}
+@keyframes animateBg{  
+    100%{
+        filter: hue-rotate(360deg);/* changes color to other hue*/
+    }
+}
+
+.login-box{
+    width: 450px;
+    height: 520px;
+    position: relative;
+    background-color: transparent;
+    border-radius: 3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid rgba(255,255,255,0.5);
+    backdrop-filter: blur(.3rem); /* helps in blurring the selected section*/
+}
+
+.login-box h2{
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #f5f5f5;
+    font-weight: 700;
+}
+
+.input_box{
+    position: relative;
+    width: 310px;
+    margin: 1.9rem 0;
+    border-bottom: 2px solid #fff;
+}
+
+.input_box label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1rem;
+    color: #fff;
+    pointer-events: none;  /* it helps the cursor to not select the email?password text*/
+    transition: .5s;
+}
+/* for the movement of lable when clicked on the input box*/
+.input_box input:focus~label,
+.input_box input:valid~label {
+
+    top: -5px;
+
+}
+
+.input_box input{
+    width: 100%;
+    height: 3rem;
+    border: none;
+    outline: none;
+    border-radius: 1rem;
+    background-color: transparent;
+    font-size: 1rem;
+    color: #fff;
+    padding: 0 2.1rem 0 .3rem; /*to not let the password overflow over icon, we set the right paddding as 2rem*/
+}
+.input_box .icon{
+    position: absolute;
+    color: #fff;
+    right: .5rem;
+    font-size: 1.2rem;
+    line-height: 3.73rem;
+
+}
+
+.remember_forgot{
+    margin: -1rem 0 1rem;
+    font-size: 1rem;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+}
+
+.remember_forgot .label input{
+    margin-right: 3px ;
+}
+.remember_forgot a{
+    color: #fff;
+    text-decoration: none;
+    transition: .3s ease-in-out;
+}
+.remember_forgot a:hover{
+
+    text-decoration: underline;
+}
+
+button{
+    width: 100%;
+    height: 2.3rem;
+    border-radius: 2.1rem;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #000;
+    cursor: pointer;
+}
+
+
+.login_link{
+    font-size: 1rem;
+    color: #fff;
+    text-align: center;
+    margin: 1.4rem 0 .8rem;
+}
+
+.login_link p a{
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+
+}
+
+.login_link p a:hover{
+    text-decoration: underline;
+}
+
+
+@media  (max-width: 420px){
+    html{
+        font-size: 90%;
+    }
+    .login-box{
+        width: 100%;
+        height: 100vh;
+        border: none;
+    }
+    .input_box{
+        width: 290px;
+    }
+}
+
+@media  (max-width: 320px){
+    html{
+        font-size: 80%;
+    }
+    .input_box{
+        width: 270px;
+    }
+}
